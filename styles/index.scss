@@ -70,6 +70,13 @@ $font-xl: 3.8rem;
       margin-top: 10px;
     }
   }
+  @media screen and (max-width: 1200px) {
+    width: 50%;
+    margin: auto;
+  }
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 }
 
 ////FOR BTN
@@ -120,6 +127,25 @@ $font-xl: 3.8rem;
       color: $text-dark;
     }
   }
+
+  @media screen and (max-width: 1200px) {
+    border-radius: 10px;
+    i {
+      margin-top: 10px;
+    }
+    span {
+      border-radius: 10px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    border-radius: 5px;
+    i {
+      margin-top: 5px;
+    }
+    span {
+      border-radius: 5px;
+    }
+  }
 }
 
 //Core
@@ -132,105 +158,106 @@ $font-xl: 3.8rem;
       width: 100%;
       max-width: 1280px;
       margin: auto;
-      .navigator-wrapper{
+      .navigator-wrapper {
         background-color: transparent;
         position: fixed;
         top: 0;
         width: 100%;
         z-index: 10000;
         transition: all 0.5s;
-        &.scrolled{
+        &.scrolled {
           background-color: white;
-          .navigator-list{
+          .navigator-list {
             padding-bottom: 0px;
           }
         }
-        
-      .navigator-body {
-        position: relative;
-        width: 50%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        top: 0;
-        gap: 2px;
-        &.scrolled{
-          .logo-wrapper img{
-            display: none;
-          }
-          .phone-wrapper {
-          width: 15%;
-          gap: 0;
-          background-color: $background-dark;
-          height: 30px;
-          text-align: center;
-          justify-content: center;
-          @include btn;
-          font-weight: 400;
-          i {
-            display: inline-block;
-            margin-top: 7px;
-            font-size: $font-s;
-          }
-          p {
-            display: inline-block;
-            font-size: $font-s;
-          }
-        }}
-        
-       
-        .navigator-list {
-          margin-left: 100px;
-          width: 40%;
-          padding: 30px;
 
-          ul {
-            display: flex;
-            justify-content: space-between;
-            list-style: none;
-            li {
-              a {
-                text-decoration: none;
-                color: $text-black;
-                font-family: $font-regular;
+        .navigator-body {
+          position: relative;
+          width: 50%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          top: 0;
+          gap: 2px;
+          &.scrolled {
+            .logo-wrapper img {
+              display: none;
+            }
+            .phone-wrapper {
+              width: 15%;
+              gap: 0;
+              background-color: $background-dark;
+              height: 30px;
+              text-align: center;
+              justify-content: center;
+              @include btn;
+              font-weight: 400;
+              i {
+                display: inline-block;
+                margin-top: 7px;
                 font-size: $font-s;
-                font-weight: 600;
-                transition: all 0.5s;
-                &:hover {
-                  color: $text-dark;
+              }
+              p {
+                display: inline-block;
+                font-size: $font-s;
+              }
+            }
+          }
+
+          .navigator-list {
+            margin-left: 100px;
+            width: 40%;
+            padding: 30px;
+
+            ul {
+              display: flex;
+              justify-content: space-between;
+              list-style: none;
+              li {
+                a {
+                  text-decoration: none;
+                  color: $text-black;
+                  font-family: $font-regular;
+                  font-size: $font-s;
+                  font-weight: 600;
+                  transition: all 0.5s;
+                  &:hover {
+                    color: $text-dark;
+                  }
                 }
               }
             }
           }
-        }
 
-        .phone-wrapper {
-          width: 15%;
-          gap: 0;
-          background-color: $background-dark;
-          height: 50px;
-          text-align: center;
-          justify-content: center;
-          @include btn;
-          font-weight: 400;
+          .phone-wrapper {
+            width: 15%;
+            gap: 0;
+            background-color: $background-dark;
+            height: 50px;
+            text-align: center;
+            justify-content: center;
+            @include btn;
+            font-weight: 400;
 
-          i {
-            display: inline-block;
-            margin-top: 15px;
+            i {
+              display: inline-block;
+              margin-top: 15px;
+            }
+            p {
+              display: inline-block;
+            }
           }
-          p {
-            display: inline-block;
+          .nav-logos-container a {
+            color: $text-black-dark;
+            transition: all 0.5s;
+            margin: 5px;
+            &:hover {
+              color: $text-dark;
+            }
           }
         }
-        .nav-logos-container a {
-          color: $text-black-dark;
-          transition: all 0.5s;
-          margin: 5px;
-          &:hover {
-            color: $text-dark;
-          }
-        }
-      }}
+      }
       .header-container {
         width: 100%;
         display: flex;
@@ -238,22 +265,34 @@ $font-xl: 3.8rem;
         justify-content: center;
         align-items: center;
         margin-top: 200px;
+
         h3 {
-          font-family: $font-regular;
-          color: $text-dark;
-          font-weight: 600;
-          font-size: $font-sm;
+          font-size: $font-s;
         }
         h1 {
-          font-size: $font-xl;
-          font-family: $font-regular;
-          font-weight: 700;
+          font-size: $font-l;
+        }
+        @media screen and (max-width: 1200px) {
+          width: 90%;
+          h3 {
+            font-size: $font-s;
+          }
+          h1 {
+            font-size: $font-l;
+          }
+          img {
+            width: 100%;
+          }
+        }
+        @media screen and (max-width: 768px) {
         }
       }
       .team-container.grid-1 {
         display: flex;
         flex-wrap: wrap;
         gap: 4%;
+        justify-content: space-around;
+
         .grid-1-item {
           @include box-format;
         }
@@ -480,13 +519,13 @@ $font-xl: 3.8rem;
             }
           }
         }
-        .footer-logos-container i{
+        .footer-logos-container i {
           transition: all 0.5s;
-          &:hover{
-          cursor: pointer;
-          color: black;
-        }}
-         
+          &:hover {
+            cursor: pointer;
+            color: black;
+          }
+        }
       }
     }
   }
